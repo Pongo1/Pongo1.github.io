@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html> 
+<title>Game</title>
+<header></header>
+<body>
+<h2 class="comp">.OATECH</h2>
+<h2 class="title-message">Game on!</h2>
+
+<div class="instructions"> 
+<p>Pick any three digit number.</p> 
+	<p>Turn that three digit number around from left to right</p> 
+	<p>Lets take an example.<br>Say your three digit number was 123, turn it around to 321</p>
+	<p>Good, now from the two numbers you have subtract the small one from the big one.</p> 
+	<p>Like this: 321 - 123<br>Now tell me your last number</p>
+	<p>Just your last number, and I will tell you your full answer</p>
+</div>
+<p id = "EntVal">Enter value: </p>
+<div class="main-form">
+	<form name ="magic"> 
+	<input type="text" name = "lastNumber"/> 
+	<input type = "submit" onclick ="Mechanism()"  value = "Show me" name = "lastNumberButton"/>
+	</form>
+</div>
+<p class="maker">This website was wade by Frimpong Opoku Agyemang<br>For more information call +27736987822/ +22379680869/ +23350680869</p>
+<script language = "javascript">
+var Mechanism = function(){
+	var number = magic.lastNumber.value;
+	if (number.length ==1)
+	{
+		var lNumber = Number(number); 
+		if (lNumber ==9) 
+		{
+			alert("Your answer is 99");
+		}
+		else
+		{
+			var firstNumber = 9-lNumber ; 
+			var ans = firstNumber.toString()+"9"+lNumber.toString();
+			alert("Your answer is "+ans);
+		}
+	}
+	else if(number.length ==0 || number.length >1)
+	{
+		alert("Please make sure you have entered only your last number.");
+	}};
+
+</script>
+<style>
+body{
+	margin-right:200px;
+	margin-left:200px;
+	margin-bottom: 200px; 
+	margin-top:20px;
+
+}
+html{
+	background: url("gameback.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background:(255, 255, 255, 0.5);
+	background-position: center center;
+}
+.instructions{
+	font-family: "Century Gothic",CenturyGothic, sans-serif;
+	color:orange;
+	opacity:0.7;
+	border: solid 2px white;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
+	padding: 20px;
+	border-top-width:10px;
+	border-top-color:orange;
+}
+.title-message{
+	font-family: "Century Gothic",CenturyGothic, sans-serif;
+	font-size:45px;
+	margin-top:0px;
+	color:white;
+	text-shadow: 2px 4px orange;
+	opacity:0.8;
+}
+#EntVal{
+	color:orange;
+	font-family: "Century Gothic",CenturyGothic, sans-serif;
+	font-size: 15px;
+}
+.comp{
+text-shadow: -1px -1px white, 1px 1px gray;
+	font-size: 20px;
+	text-align: center;
+	color:maroon;
+	padding-bottom: 10px;
+	text-align: right;
+}
+.maker{
+
+	font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+	text-align: right;
+	opacity:0.6;
+	font-size: 12px;
+	color:white;
+}
+</style>
+</body>
+</html>
+
